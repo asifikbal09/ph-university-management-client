@@ -1,37 +1,44 @@
-import { Layout, Menu, MenuProps } from "antd";
+import { Layout, Menu } from "antd";
 import { Outlet } from "react-router-dom";
+import { adminSideBarItem } from "../../routes/admin.routes";
 const { Content, Footer, Header, Sider } = Layout;
 
-const items: MenuProps["items"] = [
-    {
-        key:"1",
-        label:"Dashboard",
-    },
-    {
-        key:"2",
-        label:"Profile",
-    },
-    {
-        key:"3",
-        label:"User Management",
-        children:[
-            {
-                key:"11",
-                label:"Create Admin",
-            },
-            {
-                key:"12",
-                label:"Create Faculty"
-            }
-        ]
-    }
-];
+// const items: MenuProps["items"] = [
+//   {
+//     key: "Dashboard",
+//     label: <NavLink to="/admin/dashboard">Dashboard</NavLink>,
+//   },
+//   {
+//     key: "2",
+//     label: "Profile",
+//   },
+//   {
+//     key: "User Management",
+//     label: "User Management",
+//     children: [
+//       {
+//         key: "Create Admin",
+//         label: <NavLink to="/admin/create-admin">Create Admin</NavLink>,
+//       },
+//       {
+//         key: "Create Faculty",
+//         label: <NavLink to="/admin/create-faculty">Create Faculty</NavLink>,
+//       },
+//       {
+//         key: "Create Student",
+//         label: <NavLink to="/admin/create-student">Create Student</NavLink>,
+//       },
+//     ],
+//   },
+// ];
 
 const MainLayout = () => {
   return (
-    <Layout style={{
-        height:"100vh"
-    }}>
+    <Layout
+      style={{
+        height: "100vh",
+      }}
+    >
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -58,7 +65,7 @@ const MainLayout = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["4"]}
-          items={items}
+          items={adminSideBarItem}
         />
       </Sider>
       <Layout>
