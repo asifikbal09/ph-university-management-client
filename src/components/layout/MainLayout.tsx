@@ -1,6 +1,8 @@
-import { Layout } from "antd";
+import { Button, Layout } from "antd";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import { useAppDispatch } from "../../redux/hooks";
+import { logout } from "../../redux/features/auth/authSlice";
 const { Content, Header } = Layout;
 
 //! Hard coded side bar items
@@ -35,6 +37,14 @@ const { Content, Header } = Layout;
 // ];
 
 const MainLayout = () => {
+
+const dispatch = useAppDispatch()
+
+const handelLogout=()=>{
+  dispatch(logout())
+}
+
+
   return (
     <Layout
       style={{
@@ -43,7 +53,7 @@ const MainLayout = () => {
     >
       <Sidebar></Sidebar>
       <Layout>
-        <Header style={{ padding: 0 }} />
+        <Header><Button onClick={handelLogout}>Log Out</Button></Header>
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
