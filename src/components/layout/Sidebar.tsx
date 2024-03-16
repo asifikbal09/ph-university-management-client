@@ -15,10 +15,7 @@ const userRole = {
 const { Sider } = Layout;
 
 const Sidebar = () => {
-  
-  const user = useAppSelector(selectCurrentUser)
-
-
+  const user = useAppSelector(selectCurrentUser);
 
   let sidebarItems;
 
@@ -38,7 +35,11 @@ const Sidebar = () => {
   }
 
   return (
-    <Sider breakpoint="lg" collapsedWidth="0">
+    <Sider
+      breakpoint="lg"
+      collapsedWidth="0"
+      style={{ height: "100vh", position: "sticky", top: 0, left: 0 }}
+    >
       <div
         style={{
           color: "white",

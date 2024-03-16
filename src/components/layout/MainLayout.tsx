@@ -37,23 +37,23 @@ const { Content, Header } = Layout;
 // ];
 
 const MainLayout = () => {
+  const dispatch = useAppDispatch();
 
-const dispatch = useAppDispatch()
-
-const handelLogout=()=>{
-  dispatch(logout())
-}
-
+  const handelLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <Layout
       style={{
-        height: "100vh",
+        height: "100%",
       }}
     >
       <Sidebar></Sidebar>
       <Layout>
-        <Header><Button onClick={handelLogout}>Log Out</Button></Header>
+        <Header>
+          <Button onClick={handelLogout}>Log Out</Button>
+        </Header>
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
